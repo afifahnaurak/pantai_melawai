@@ -2,7 +2,7 @@
 
 Project Tampilan Aplikasi Tempat Wisata Pantai Melawai
 
-
+<img width="328" alt="Aplikasi Pantai Melawai" src="https://user-images.githubusercontent.com/56423411/199099788-0a7c7c0d-7633-47a6-8c11-8c028c257d8b.png">
 
 by Afifah Naura Kamilia
 
