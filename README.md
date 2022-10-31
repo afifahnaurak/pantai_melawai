@@ -2,6 +2,8 @@
 
 Project Tampilan Aplikasi Tempat Wisata Pantai Melawai
 
+by Afifah Naura Kamilia
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
