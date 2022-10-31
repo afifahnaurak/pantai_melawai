@@ -1,6 +1,6 @@
 # pantai_melawai
 
-A new Flutter project.
+Project Tampilan Aplikasi Tempat Wisata Pantai Melawai
 
 ## Getting Started
 
