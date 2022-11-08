@@ -8,7 +8,7 @@ Afifah Naura Kamilia / 3.34.21.3.02 / IK-2D
 
 2. List Tempat Wisata Balikpapan
 
-https://user-images.githubusercontent.com/56423411/200486431-a374accd-3b78-4cdb-b69a-591b86bea3ab.png
+<img width="262" alt="List Tempat Wisata Balikpapan" src="https://user-images.githubusercontent.com/56423411/200486431-a374accd-3b78-4cdb-b69a-591b86bea3ab.png">
 
 ## Getting Started
 
