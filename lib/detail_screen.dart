@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:pantai_melawai/model/tourism_place.dart';
 
 class DetailScreen extends StatelessWidget {
-  const DetailScreen({super.key});
+  final TourismPlace place;
+  const DetailScreen({Key? key, required this.place}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -10,12 +12,39 @@ class DetailScreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Image.asset('images/pantaimelawai.jpg'),
+            children: <Widget>[
+              Stack(
+                children: <Widget>[
+                  Image.asset(place.imageAsset),
+                  SafeArea(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          CircleAvatar(
+                            backgroundColor: Colors.grey,
+                            child: IconButton(
+                              icon: const Icon(
+                                Icons.arrow_back,
+                                color: Colors.white,
+                              ),
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                            ),
+                          ),
+                          const FavoriteButton(),
+                        ],
+                      ),
+                    ),
+                  ),
+                ]
+              ),
               Container(
                 margin: const EdgeInsets.only(top: 16.0),
-                child: const Text(
-                  'Pantai Melawai',
+                child: Text(
+                  place.name,
                   textAlign: TextAlign.center,
                   style: TextStyle(
                   fontSize: 30.0,
@@ -27,26 +56,32 @@ class DetailScreen extends StatelessWidget {
                 margin: const EdgeInsets.symmetric(vertical: 16.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
+                  children: <Widget>[
                     Column(
                       children: [
-                      Icon(Icons.calendar_today),
-                      SizedBox(height: 8.0),
-                      Text('Open Everyday'),
+                        Icon(Icons.calendar_today),
+                        SizedBox(height: 8.0),
+                        Text(
+                          place.openDays,
+                        ),
                       ],
                     ),
                     Column(
-                      children: [
-                      Icon(Icons.access_time),
-                      SizedBox(height: 8.0),
-                      Text('06:00 - 18:00'),
+                      children: <Widget>[
+                        Icon(Icons.access_time),
+                        SizedBox(height: 8.0),
+                        Text(
+                          place.openTime,
+                        ),
                       ],
                     ),
                     Column(
-                      children: [
-                      Icon(Icons.monetization_on),
-                      SizedBox(height: 8.0),
-                      Text('Rp 25.000'),
+                      children: <Widget>[
+                        Icon(Icons.monetization_on),
+                        SizedBox(height: 8.0),
+                        Text(
+                          place.ticketPrice,
+                        ),
                       ],
                     ),
                   ],
@@ -54,48 +89,60 @@ class DetailScreen extends StatelessWidget {
               ),
               Container(
                 padding: const EdgeInsets.all(16.0),
-                child: const Text(
-                  '''Berlokasi tak jauh dari pusat kota, Pantai Melawai terletak di Jalan Pelabuhan Semayang, Kota Balikpapan. Pantai yang menjadi ngkrongan anak muda Balikpapan ini dibatasi batu karang dan tembok beton. Batas ini memisahkan perairan dan kehidupan kota yang hiasi gedung perkantoran, hotel, kafe, bank, dan arena olahraga.''',
+                child: Text(
+                  place.description,
                   textAlign: TextAlign.center,
                   style: TextStyle(
+                    fontSize: 16.0,
                     fontFamily: 'Oxygen',
                   ),
                 ),
               ),
-              SizedBox(
+              Container(
                 height: 150,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
-                  children: [
-                    Padding(
+                  children: place.imageUrls.map((url){
+                    return Padding(
                       padding: const EdgeInsets.all(4.0),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(10),
-                        child: Image.network('https://indonesiatraveler.id/wp-content/uploads/2021/05/Balikpapan-Pantai-Melawai-Photo-by-@adifarizi_03.png',
-                        ),
+                        child: Image.network(url),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(4.0),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(10),
-                        child: Image.network('https://ksmtour.com/media/images/articles7/pantai-melawai-kalimantan-timur.jpg',),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(4.0),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(10),
-                        child: Image.network('https://indonesia.go.id/resources/album/albmig/antarafoto-wisata-pantai-melawai-di-kalimantan-timur-090222-bay-5_(1).jpg',),
-                      ),
-                    )
-                  ],
+                    );
+                  }).toList(),
                 ),
               )
             ],
-          ),
-        )
+          ), 
+        ),
+      )
+    );
+  }
+}
+
+class FavoriteButton extends StatefulWidget {
+  const FavoriteButton({Key? key}) : super(key: key);
+
+  @override
+  _FavoriteButtonState createState() => _FavoriteButtonState();
+  }
+
+  class _FavoriteButtonState extends State<FavoriteButton> {
+    bool isFavorite = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      icon: Icon(
+        isFavorite ? Icons.favorite : Icons.favorite_border,
+        color: Colors.red,
       ),
+      onPressed: () {
+        setState(() {
+          isFavorite = !isFavorite;
+        });
+      },
     );
   }
 }

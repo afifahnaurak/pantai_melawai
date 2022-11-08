@@ -65,6 +65,14 @@ flutter:
     - images/melawai1.png
     - images/melawai2.jpg
     - images/melawai3.jpg
+    - images/tamanbekapai.jpg
+    - images/pantailamaru.jpg
+    - images/danaucermin.jpeg
+    - images/pantaiserumpun.jpg
+    - images/pantaimanggar.jpg
+    - images/bukitbangkirai.jpg
+    - images/batudinding.jpg
+    - images/kampungatasair.jpg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

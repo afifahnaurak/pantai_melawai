@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pantai_melawai/detail_screen.dart';
+import 'package:pantai_melawai/main_screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -11,7 +12,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
     title: 'Pantai Melawai',
     theme: ThemeData(),
-    home: const DetailScreen(),
+    home: const MainScreen(),
+    debugShowCheckedModeBanner: false,
     );
   }
 }
