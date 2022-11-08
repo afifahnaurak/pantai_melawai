@@ -10,6 +10,10 @@ Afifah Naura Kamilia / 3.34.21.3.02 / IK-2D
 
 <img width="262" alt="List Tempat Wisata Balikpapan" src="https://user-images.githubusercontent.com/56423411/200486431-a374accd-3b78-4cdb-b69a-591b86bea3ab.png">
 
+<img width="293" alt="Detail Danau Cermin Lamaru" src="https://user-images.githubusercontent.com/56423411/200487002-65814669-ffd6-4894-9bbd-aa10666aadeb.png">
+
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
