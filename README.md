@@ -1,8 +1,8 @@
 # pantai_melawai
 
-Project Tampilan Aplikasi Tempat Wisata Pantai Melawai
+Afifah Naura Kamilia / 3.34.21.3.02 / IK-2D
 
-by Afifah Naura Kamilia / 3.34.21.3.02 / IK-2D
+1. Project Tampilan Aplikasi Tempat Wisata Pantai Melawai
 
 <img width="328" alt="Aplikasi Pantai Melawai" src="https://user-images.githubusercontent.com/56423411/199099788-0a7c7c0d-7633-47a6-8c11-8c028c257d8b.png">
 
